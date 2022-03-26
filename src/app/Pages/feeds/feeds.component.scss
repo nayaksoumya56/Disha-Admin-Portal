@@ -1,0 +1,76 @@
+@import '../../../styles.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.feeds_container {
+    display: flex;
+    margin-top: 40px;
+    justify-items: flex-start;
+}
+.image_preview {
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    .image {
+        padding: 40px 40px;
+        border: 2px solid $primary-color;
+        img {
+            height: 100px;
+        }
+    }
+    .select_img_btn {
+        text-align: center;
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid $primary-color-light;
+        input {
+            font-family: "UbuntuRegular";
+        }
+    }
+    .select_img_btn:hover {
+        background-color: white;
+        color: $primary-color;
+        cursor: pointer;
+    }
+}
+.feed_form {
+    margin: 30px;
+    .input_detail {
+        margin-top: 20px;
+    }
+}
+input, textarea {
+    background-color: black;
+    outline: none;
+    color: $primary-color-light;
+    padding: 10px;
+    border: 1px solid;
+}
+::placeholder {
+    color:$primary-color-light!important;
+}
+.upload {
+    display: flex;
+    border: 1px solid $primary-color-light;
+    padding: 10px;
+    width: 140px;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 20px;
+    font-size: 14pt;
+    .icon_cloud {
+        img {
+            margin-right: 10px;
+            height: 30px;
+        }
+    }
+}
+.upload:hover {
+    background-color: white;
+    color: $primary-color;
+}

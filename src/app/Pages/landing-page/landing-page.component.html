@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="flex_container">
+        <div class="infographic">
+            <div class="logo">
+                <img src="../../../assets/icons/logo.svg" alt="LOGO">
+            </div>
+            <div>
+                <lottie-animation-view
+                    [options]="lottieConfig"
+                    [width]="300"
+                    [height]="400">
+            </lottie-animation-view>  
+            </div>
+        </div>
+        <div *ngIf="isLogin" class="form">
+            <div class="form_container">
+                <div class="title">
+                    Login with Email
+                </div>
+                <div class="form_fields">
+                    <div class="form_fields--input">
+                        <input type="text" placeholder="Email">
+                        <input type="password" placeholder="Password">
+                    </div>
+                    <div class="form_fields--submit">
+                        <button>Login</button>
+                    </div>
+                </div>
+                <div class="signup-text">New to Portal? Sign up here.</div>
+                <div class="alert">*Access to new accounts will be restricted till an administrator authorizes.</div>
+            </div>
+        </div>
+
+        <div *ngIf="!isLogin" class="form">
+            <div class="form_container">
+                <div class="title">
+                    Register
+                </div>
+                <div class="form_fields">
+                    <div class="form_fields--input">
+                        <input type="text" placeholder="Name">
+                        <input type="text" placeholder="Email">
+                        <input type="password" placeholder="Password">
+                        <div>
+                            <select class="minimal">
+                                <option value="admin">Admin</option>
+                                <option value="panelist">Panelist</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form_fields--submit">
+                        <button>Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="separator"></div>
+</div>

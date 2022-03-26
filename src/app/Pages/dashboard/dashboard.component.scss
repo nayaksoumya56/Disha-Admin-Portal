@@ -1,0 +1,151 @@
+@import '../../../styles.scss';
+
+.container {
+    background-color: $background-color;
+    height: 100vh;
+    position: relative;
+    overflow-y: hidden;
+    user-select: none;
+}
+.flex_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 100px;
+    margin-top: 100px;
+    font-family: $primary-font;
+    color: $primary-color-light;
+}
+.logo {
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    img {
+        width: 120px;
+    }
+}
+.menu_icon {
+    position: absolute;
+    right: 10%;
+    top: 8%;
+    cursor: pointer;
+    img {
+        width: 80px;
+    }
+}
+.tab_bar {
+    display: flex;
+    border-bottom: 1px solid $primary-color-light;
+    .tab_bar--item {
+        padding: 0 40px 10px 40px;
+        cursor: pointer;
+        font-size: 18pt;
+        font-family: $primary-font-Bold;
+    }
+}
+.active_tab {
+    color: white;
+    border-bottom: 4px solid white;
+}
+.current_candidate {
+    display: flex;
+    align-self: center;
+    align-items: center;
+    margin-right: 80px;
+    .user_dp {
+        img {
+            width: 120px;
+            border-radius: 50%;
+        }
+    }
+    .user_details {
+        margin-left: 30px;
+        font-size: 20pt;
+    }
+}
+.sub_container {
+    display: flex;
+    margin: 60px 120px;
+}
+.token_details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid $primary-color-light;
+    width: 120px;
+    height: 120px;
+    padding: 20px;
+    margin-left: 80px;
+    border-radius: 10px;
+    .text {
+        font-size: 18pt;
+    }
+    .number {
+        color: #FFE36E;
+        font-size: 24pt;
+        font-family: $primary-font-Bold;
+    }
+}
+.queue {
+    display: flex;
+    .description {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .desc_text {
+            font-size: 20pt;
+            color: white;
+        }
+        .arrow_icon {
+            margin-left: 20px;
+            margin-right: 20px;
+            img {
+                height: 40px;
+            }
+        }
+    }
+    .candidate_profiles {
+        display: flex;
+        .profile {
+            margin: 10px;
+            img {
+                border-radius: 50%;
+                width: 60px;
+            }
+        }
+    }
+}
+.action_btns {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    .btn_resume {
+        display: flex;
+        align-items: center;
+        border: 1px solid $primary-color-light;
+        padding: 10px;
+        cursor: pointer;
+        margin-right: 20px;
+        .icon_check {
+            img {
+                margin-right: 10px;
+                height: 18px;
+            }
+        }
+    }
+    .btn_completed {
+        display: flex;
+        align-items: center;
+        border: 1px solid $primary-color-light;
+        padding: 10px;
+        cursor: pointer;
+        margin-left: 20px;
+        .icon_pdf {
+            img {
+                margin-right: 10px;
+                height: 18px;
+            }
+        }
+    }
+}

@@ -1,0 +1,61 @@
+@import '../../../styles.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.group_details {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    .details {
+        display: flex;
+        align-items: center;
+        .details_text {
+            font-size: 20pt;
+            font-family: 'UbuntuRegular';
+        }
+        .details_number {
+            font-size: 28pt;
+            font-family: 'UbuntuBold';
+            color: $number-color;
+            margin: 10px 20px;
+        }
+    }
+}
+.action_btns {
+    display: flex;
+    align-self: end;
+    align-items: end;
+    justify-content: center;
+    .refresh {
+        cursor: pointer;
+        margin: 10px;
+        img {
+            height: 40px;
+        }
+    }
+}
+.segregate {
+    display: flex;
+    border: 1px solid $primary-color-light;
+    padding: 10px;
+    margin-top: 20px;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 40px;
+    font-size: 14pt;
+    .icon_segregate {
+        img {
+            margin-right: 10px;
+            height: 30px;
+        }
+    }
+}
+.segregate:hover {
+    background-color: white;
+    color: $primary-color;
+}

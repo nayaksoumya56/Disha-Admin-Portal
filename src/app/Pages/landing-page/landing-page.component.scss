@@ -1,0 +1,157 @@
+@import '../../../styles.scss';
+
+.container {
+    background-color: $background-color;
+    height: 100vh;
+    position: relative;
+    overflow-y: hidden;
+}
+.flex_container {
+    display: flex;
+    align-items: center;
+    padding: 40px 100px;
+}
+
+.infographic {
+    // border: 1px solid white;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .logo {
+        margin-top: 60px;
+    }
+}
+.form {
+    // border: 1px solid white;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    font-family: $primary-font;
+    color: $primary-color-light;
+    .form_container {
+        margin: 60px;
+        // border: 1px solid wheat;
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .title {
+            font-size: $font-size-heading;
+        }
+        .form_fields {
+            margin-top: 40px;
+            display: flex;
+            width: 60%;
+            flex-direction: column;
+            // border: 1px solid aqua;
+            .form_fields--input {
+                // margin: 20px;
+                display: flex;
+                flex-direction: column;
+                input {
+                    background-color: transparent;
+                    padding: 10px;
+                    margin: 10px;
+                    color: inherit;
+                    border-radius: 5px;
+                    outline: none;
+                    box-shadow: none;
+                }
+            }
+            .form_fields--submit {
+                margin: 40px 10px;
+                color: inherit;
+                button {
+                    // margin: 0 20px;
+                    padding: 10px;
+                    width: 100%;
+                    border-radius: 5px;
+                    color: inherit;
+                    background-color: transparent;
+                    box-shadow: 0 0 10px 1px #6060609e;
+                }
+            }
+        }
+        .signup-text {
+            margin-top: 20px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .alert {
+            margin-top: 10px;
+            font-size: 10pt;
+        }
+    }
+}
+.separator {
+    position: absolute;
+    background-color: $primary-color;
+    width: 2px;
+    height: 400px;
+    left: 50%;
+    top: 20%;
+    z-index: 20;
+}
+// Custom Select
+select {
+    width: -webkit-fill-available;
+    margin: 10px 10px !important;
+    /* styling */
+    background-color: transparent;
+    color: $primary-color-light;
+    // border: thin solid blue;
+    border-radius: 5px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.5em 3.5em 0.5em 1em;
+
+    /* reset */
+    margin: 0;      
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+select.minimal {
+    background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ffffff5d, #ffffff5d);
+    background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 0.5em;
+    background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+    background-repeat: no-repeat;
+}
+select.minimal:focus {
+    background-image:
+    linear-gradient(45deg, #ffffff5d 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, #ffffff5d 50%),
+    linear-gradient(to right, #ffffff5d, #ffffff5d);
+    background-position:
+    calc(100% - 15px) 1em,
+    calc(100% - 20px) 1em,
+    calc(100% - 2.5em) 0.5em;
+    background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+    background-repeat: no-repeat;
+    // border-color: green;
+    outline: 0;
+}
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
+option {
+    background-color: black !important;
+}

@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+
+$background-color : #000000;
+$primary-color: #202020;
+$primary-color-light: #ffffff5d;
+$number-color: #FFE36E;
+
+$font-size-heading: 20pt;
+
+body, div, li, ul, p {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: UbuntuRegular;
+    src: url("/assets/fonts/Ubuntu-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: UbuntuBold;
+    src: url("/assets/fonts/Ubuntu-Bold.ttf") format("truetype");
+}
+
+$primary-font: UbuntuRegular;
+$primary-font-Bold: UbuntuBold;
