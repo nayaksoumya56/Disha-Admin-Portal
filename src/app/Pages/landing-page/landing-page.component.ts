@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { getData, createTable, dropTable } from '../../../environments/apiServices.js'
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class LandingPageComponent implements OnInit {
 
   public lottieConfig: Object;
-  isLogin = false;
+  isLogin = true;
 
   constructor() {
     this.lottieConfig = {
@@ -16,10 +16,15 @@ export class LandingPageComponent implements OnInit {
       renderer: 'canvas',
       autoplay: true,
       loop: true
-  };
+    };
   }
 
   ngOnInit() {
+    
+  }
+
+  toggleLogin() {
+    this.isLogin = !this.isLogin;
   }
 
 }

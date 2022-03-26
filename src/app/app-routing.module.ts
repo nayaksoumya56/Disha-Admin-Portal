@@ -5,12 +5,12 @@ import { LandingPageComponent } from './Pages/landing-page/landing-page.componen
 
 
 const routes: Routes = [
-  {path: 'login', component: LandingPageComponent},
-  {path: '', component: DashboardComponent}
+	{ path: 'login', component: LandingPageComponent },
+	{ path: '', component: DashboardComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forRoot(routes)],
+	exports: [RouterModule]
 })
 export class AppRoutingModule { }

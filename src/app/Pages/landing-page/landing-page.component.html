@@ -23,10 +23,10 @@
                         <input type="password" placeholder="Password">
                     </div>
                     <div class="form_fields--submit">
-                        <button>Login</button>
+                        <button class="form_submit_btn">Login</button>
                     </div>
                 </div>
-                <div class="signup-text">New to Portal? Sign up here.</div>
+                <div class="signup-text" (click)="toggleLogin()">New to Portal? Sign up here.</div>
                 <div class="alert">*Access to new accounts will be restricted till an administrator authorizes.</div>
             </div>
         </div>
@@ -49,9 +49,10 @@
                         </div>
                     </div>
                     <div class="form_fields--submit">
-                        <button>Sign Up</button>
+                        <button class="form_submit_btn">Sign Up</button>
                     </div>
                 </div>
+                <div class="signup-text" (click)="toggleLogin()">Existing User? Sign in.</div>
             </div>
         </div>
     </div>

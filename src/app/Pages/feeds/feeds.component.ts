@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { uploadFile, downloadFile } from "../../../environments/apiServices.js"
 
 @Component({
   selector: 'app-feeds',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class FeedsComponent implements OnInit {
 
   previewImage = null;
+  ImageFile = null;
 
   constructor() { }
 
@@ -16,6 +18,7 @@ export class FeedsComponent implements OnInit {
 
   handleFileInput(file: FileList) {
     this.previewImage = file.item(0);
+    this.ImageFile = file.item(0);
     const reader = new FileReader();
     reader.readAsDataURL(this.previewImage); // toBase64
     reader.onload = () => {
@@ -23,4 +26,11 @@ export class FeedsComponent implements OnInit {
     };
   }
 
+  async onClickUpload() {
+    if (this.ImageFile) {
+      await uploadFile('Feeds', this.ImageFile)
+    } else {
+      alert("no image found")
+    }
+  }
 }

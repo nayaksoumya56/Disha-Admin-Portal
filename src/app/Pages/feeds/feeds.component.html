@@ -1,7 +1,7 @@
 <div class="container">
     <div class="feeds_container">
         <div class="image_preview">
-            <div class="image">
+            <div class="image" >
                 <img [src]="previewImage != null ? previewImage : 'assets/icons/add-image.png'"  alt="Add_Image">
             </div>
             <div class="select_img_btn">
@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-    <div class="upload">
+    <div class="upload" (click)="onClickUpload()">
         <div class="icon_cloud"><img src="assets/icons/cloud-computing.png" alt="Check_icon"></div>
         <div>Post</div>
     </div>
