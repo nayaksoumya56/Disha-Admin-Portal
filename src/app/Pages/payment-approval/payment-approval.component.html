@@ -1,0 +1,42 @@
+<div class="payment_container">
+    <div class="list_container">
+        <div class="list_search">
+            <input class="search_input" [ngModel]="searchText" (ngModelChange)="onChangeSearchText($event)" type="text"
+                placeholder="Search">
+        </div>
+        <div class="list_data_container">
+            <div class="data_item" *ngFor="let asp of aspirantData" (click)="onClickAspirantItem(asp)">
+                <img [src]="asp.imageUrl" [alt]="" [title]="asp.name" class="data_item_img">
+                <div class="data_item_label_container">
+                    <div class="data_item_label">{{asp.name}}</div>
+                    <div class="data_item_sub_label">{{asp.id}}</div>
+                </div>
+                <div class="data_item_border"></div>
+            </div>
+        </div>
+    </div>
+    <div class="detail_container" >
+        <div class="img_container" *ngIf="hideDetail">
+            <img [src]="selectedUser.imageUrl" [alt]="selectedUser.id" [title]="selectedUser.name" class="detail_img">
+        </div>
+        <div class="detail_user_container" *ngIf="hideDetail">
+            <div class="user_container">
+                <div class="user_label">Name</div>
+                <div class="user_value">{{selectedUser.name}}</div>
+            </div>
+            <div class="user_container">
+                <div class="user_label">Email</div>
+                <div class="user_value">{{selectedUser.email}}</div>
+            </div>
+            <div class="user_container">
+                <div class="user_label">Phone</div>
+                <div class="user_value">{{selectedUser.phone}}</div>
+            </div>
+            <div class="user_action_container">
+                <div class="btn_completed" (click)="markPaid()">
+                    <div class="icon_pdf"><img src="assets/icons/check.png" alt="Check_icon"></div>
+                    <div>Mark fee paid successfully</div>
+                </div>
+            </div>
+        </div>
+    </div>

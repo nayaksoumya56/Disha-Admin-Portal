@@ -6,9 +6,11 @@
             <div class="tab_bar--item" [ngClass]="{'active_tab': selectedTab==1}" (click)="onTabSelected(1)">Interviews</div>
             <div class="tab_bar--item" [ngClass]="{'active_tab': selectedTab==2}" (click)="onTabSelected(2)">Groups</div>
             <div class="tab_bar--item" [ngClass]="{'active_tab': selectedTab==3}" (click)="onTabSelected(3)">Feeds</div>
+            <div class="tab_bar--item" [ngClass]="{'active_tab': selectedTab==4}" (click)="onTabSelected(4)">Payments</div>
         </div>
         <app-interviews *ngIf="selectedTab==1"></app-interviews>
         <app-groups *ngIf="selectedTab==2"></app-groups>
         <app-feeds *ngIf="selectedTab==3"></app-feeds>
+        <app-payment-approval *ngIf="selectedTab==4"></app-payment-approval>
     </div>
 </div>

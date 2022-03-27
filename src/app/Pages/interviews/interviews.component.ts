@@ -70,4 +70,7 @@ export class InterviewsComponent implements OnInit {
         : grp))
     this.onChangeGroupNum(this.groupNum)
   }
+  onClickAsp(arg) {
+
+  }
 }

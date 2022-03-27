@@ -12,6 +12,11 @@ export class DashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    if (location.search.split("?").length) {
+      if (location.search.split("?").find(x => x.includes("selectedTab")).length) {
+        this.selectedTab = Number(location.search.split("?").find(x => x.includes("selectedTab")).split("=")[1])
+      }
+    }
   }
 
   onTabSelected(tabItem: number) {

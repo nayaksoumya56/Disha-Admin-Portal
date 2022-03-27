@@ -8,11 +8,21 @@ import { convertDataObjToArray, createGroups, getTime } from "../../../environme
   styleUrls: ['./groups.component.scss']
 })
 export class GroupsComponent implements OnInit {
-
+  numberOfApplicants = 0;
+  numberOfGroups = 0;
   factor = 2;
   constructor() { }
 
   ngOnInit() {
+    getData("Aspirants").then((res) => {
+      let aspirantData: any[] = convertDataObjToArray(res.data)
+      this.numberOfApplicants = aspirantData.length
+    }).catch()
+    
+    getData("Groups").then((res) => {
+      let groupData: any[] = convertDataObjToArray(res.data)
+      this.numberOfGroups = groupData.length
+    }).catch()
   }
 
   async setAspirantGroupAndToken(aspirant, groupNum, tokenNum) {

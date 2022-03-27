@@ -12,6 +12,7 @@ import { DashboardComponent } from './Pages/dashboard/dashboard.component';
 import { InterviewsComponent } from './Pages/interviews/interviews.component';
 import { GroupsComponent } from './Pages/groups/groups.component';
 import { FeedsComponent } from './Pages/feeds/feeds.component';
+import { PaymentApprovalComponent } from './Pages/payment-approval/payment-approval.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FeedsComponent } from './Pages/feeds/feeds.component';
     DashboardComponent,
     InterviewsComponent,
     GroupsComponent,
-    FeedsComponent
+    FeedsComponent,
+    PaymentApprovalComponent
   ],
   imports: [
     BrowserModule,
