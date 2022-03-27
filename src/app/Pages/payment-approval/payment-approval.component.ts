@@ -25,8 +25,12 @@ export class PaymentApprovalComponent implements OnInit {
 
   onChangeSearchText(value) {
     this.searchText = value
-    this.aspirantData = this.searchText.length > 0 ?
-      this.unfilteredData.filter((asp) => (asp.id.includes(this.searchText) || asp.name.includes(this.searchText))) :
+    let compareString = String(value).toLowerCase()
+    this.aspirantData = compareString.length > 0 ?
+      this.unfilteredData.filter((asp) => (
+        String(asp.id).toLowerCase().includes(compareString) ||
+        String(asp.name).toLowerCase().includes(compareString))
+      ) :
       this.unfilteredData
   }
   onClickAspirantItem(clickedUser) {

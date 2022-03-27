@@ -6,7 +6,7 @@
         </div>
         <div class="list_data_container">
             <div class="data_item" *ngFor="let asp of aspirantData" (click)="onClickAspirantItem(asp)">
-                <img [src]="asp.imageUrl" [alt]="" [title]="asp.name" class="data_item_img">
+                <img [src]="asp.imageUrl" [alt]="asp.id" [title]="asp.name" class="data_item_img">
                 <div class="data_item_label_container">
                     <div class="data_item_label">{{asp.name}}</div>
                     <div class="data_item_sub_label">{{asp.id}}</div>
