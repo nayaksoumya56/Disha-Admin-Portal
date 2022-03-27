@@ -6,7 +6,7 @@ import { LandingPageComponent } from './Pages/landing-page/landing-page.componen
 
 const routes: Routes = [
 	{ path: 'login', component: LandingPageComponent },
-	{ path: '', component: DashboardComponent }
+	{ path: 'dashboard', component: DashboardComponent }
 ];
 
 @NgModule({

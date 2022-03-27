@@ -5,11 +5,8 @@
                 <img src="../../../assets/icons/logo.svg" alt="LOGO">
             </div>
             <div>
-                <lottie-animation-view
-                    [options]="lottieConfig"
-                    [width]="300"
-                    [height]="400">
-            </lottie-animation-view>  
+                <lottie-animation-view [options]="lottieConfig" [width]="300" [height]="400">
+                </lottie-animation-view>
             </div>
         </div>
         <div *ngIf="isLogin" class="form">
@@ -23,7 +20,7 @@
                         <input type="password" placeholder="Password">
                     </div>
                     <div class="form_fields--submit">
-                        <button class="form_submit_btn">Login</button>
+                        <button class="form_submit_btn" (click)="onClickSignIn()">Login</button>
                     </div>
                 </div>
                 <div class="signup-text" (click)="toggleLogin()">New to Portal? Sign up here.</div>
@@ -38,18 +35,18 @@
                 </div>
                 <div class="form_fields">
                     <div class="form_fields--input">
-                        <input type="text" placeholder="Name">
-                        <input type="text" placeholder="Email">
-                        <input type="password" placeholder="Password">
+                        <input type="text" [formControl]="name" placeholder="Name">
+                        <input type="text" [formControl]="email" placeholder="Email">
+                        <input type="password" [formControl]="password" placeholder="Password">
                         <div>
-                            <select class="minimal">
+                            <select class="minimal" [formControl]="role">
                                 <option value="admin">Admin</option>
                                 <option value="panelist">Panelist</option>
                             </select>
                         </div>
                     </div>
                     <div class="form_fields--submit">
-                        <button class="form_submit_btn">Sign Up</button>
+                        <button class="form_submit_btn" (click)="onClickSignUp()">Sign Up</button>
                     </div>
                 </div>
                 <div class="signup-text" (click)="toggleLogin()">Existing User? Sign in.</div>

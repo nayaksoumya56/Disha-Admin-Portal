@@ -10,6 +10,14 @@
         <div class="text">Token No.</div>
         <div class="number">29</div>
     </div>
+    <div class="token_details">
+        <div class="text">Group No.</div>
+        <select class="minimal" [ngModel]="groupNum" (ngModelChange)="onChangeGroupNum()">
+            <option *ngFor="let grp of groups" [value]="grp.groupId">
+                {{grp.groupId}}
+            </option>
+        </select>
+    </div>
 </div>
 <div class="queue">
     <div class="description">
