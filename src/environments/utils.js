@@ -8,3 +8,7 @@ export function createGroups(arr, numGroups) {
         .fill('')
         .map((_, i) => arr.slice(i * perGroup, (i + 1) * perGroup));
 }
+
+export function getTime() {
+    return Math.floor(new Date() / 1000);
+}

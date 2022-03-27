@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { uploadFile, downloadFile } from "../../../environments/apiServices.js"
+import { FormControl, Validators } from '@angular/forms';
+import { uploadFile, setData, firebaseDatabase } from "../../../environments/apiServices.js"
+import { child, push, ref } from "firebase/database";
+import { getTime } from "../../../environments/utils.js"
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-feeds',
@@ -10,8 +14,9 @@ export class FeedsComponent implements OnInit {
 
   previewImage = null;
   ImageFile = null;
-
-  constructor() { }
+  header = new FormControl('', [Validators.required]);
+  detail = new FormControl('', [Validators.required]);
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -28,7 +33,19 @@ export class FeedsComponent implements OnInit {
 
   async onClickUpload() {
     if (this.ImageFile) {
-      await uploadFile('Feeds', this.ImageFile)
+      let uploadRes = await uploadFile('Feeds', this.ImageFile)
+      let imageUrl = uploadRes.downloadUrl;
+      let postData = {
+        created_at: getTime(),
+        details: this.detail.value,
+        header: this.header.value,
+        imageUrl,
+      }
+      // Get a key for a new Post.
+      const newPostKey = push(child(ref(firebaseDatabase), 'Feeds')).key;
+      setData("Feeds/" + newPostKey, postData)
+      // this.router.navigate(['/dashboard'])
+      location.reload()
     } else {
       alert("no image found")
     }

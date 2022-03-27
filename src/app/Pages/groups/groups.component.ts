@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { getData, setData } from "../../../environments/apiServices.js"
-import { convertDataObjToArray, createGroups } from "../../../environments/utils.js"
+import { convertDataObjToArray, createGroups, getTime } from "../../../environments/utils.js"
 
 @Component({
   selector: 'app-groups',
@@ -18,7 +18,16 @@ export class GroupsComponent implements OnInit {
   async setAspirantGroupAndToken(aspirant, groupNum, tokenNum) {
     try {
       let path = `Aspirants/${aspirant.id}`
-      await setData(path, { ...aspirant, groupNum, tokenNum })
+      await setData(path, {
+        ...aspirant,
+        groupNum,
+        tokenNum,
+        startTime: tokenNum === 1 ?
+          getTime() :
+          "",
+        created_at: getTime(),
+        endTime: ""
+      })
     } catch (err) {
       console.log(" setAspirantGroupAndToken ~ err", err)
     }
@@ -41,7 +50,12 @@ export class GroupsComponent implements OnInit {
           return {
             ...asp,
             groupNum: grpIndex + 1,
-            tokenNum: aspIdx + 1
+            tokenNum: aspIdx + 1,
+            startTime: aspIdx === 0 ?
+              getTime() :
+              "",
+            created_at: getTime(),
+            endTime: ""
           }
         })
         return aspirantsInThisGroup

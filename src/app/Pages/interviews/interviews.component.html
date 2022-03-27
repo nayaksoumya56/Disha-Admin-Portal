@@ -1,18 +1,18 @@
 <div class="sub_container">
     <div class="current_candidate">
-        <div class="user_dp"><img src="assets/icons/dp.png" alt="Profile_Picture"></div>
+        <div class="user_dp"><img [src]="currentUser.imageUrl" alt="Profile_Picture"></div>
         <div class="user_details">
-            <div>Berojgar Aurat</div>
-            <div>Group no. 3</div>
+            <div>{{currentUser.name}}</div>
+            <div>Group No.{{groupNum.substring(6)}}</div>
         </div>
     </div>
     <div class="token_details">
         <div class="text">Token No.</div>
-        <div class="number">29</div>
+        <div class="number">{{currentUser.tokenNum}}</div>
     </div>
-    <div class="token_details">
-        <div class="text">Group No.</div>
-        <select class="minimal" [ngModel]="groupNum" (ngModelChange)="onChangeGroupNum()">
+    <div class="group_dropdown">
+        <div class="text">Group</div>
+        <select class="minimal" [ngModel]="groupNum" (ngModelChange)="onChangeGroupNum($event)">
             <option *ngFor="let grp of groups" [value]="grp.groupId">
                 {{grp.groupId}}
             </option>
@@ -25,19 +25,17 @@
         <div class="arrow_icon"><img src="assets/images/right-arrow.png" alt=""></div>
     </div>
     <div class="candidate_profiles">
-        <div class="profile"><img src="assets/images/profile1.jpg" alt="candidate_profile"></div>
-        <div class="profile"><img src="assets/images/profile2.jpg" alt="candidate_profile"></div>
-        <div class="profile"><img src="assets/images/profile3.jpg" alt="candidate_profile"></div>
-        <div class="profile"><img src="assets/images/profile4.png" alt="candidate_profile"></div>
-        <div class="profile"><img src="assets/images/profile5.jpg" alt="candidate_profile"></div>
+        <div class="profile" *ngFor="let asp of nextInLine">
+            <img [src]="asp.imageUrl" [alt]="asp.id" [title]="asp.name">
+        </div>
     </div>
 </div>
 <div class="action_btns">
-    <div class="btn_resume">
+    <div class="btn_resume" (click)="downloadResume()">
         <div class="icon_check"><img src="assets/icons/pdf1.png" alt="PDF_icon"></div>
         <div>Resume</div>
     </div>
-    <div class="btn_completed">
+    <div class="btn_completed" (click)="markComplete()">
         <div class="icon_pdf"><img src="assets/icons/check.png" alt="Check_icon"></div>
         <div>Mark Interview Completed</div>
     </div>

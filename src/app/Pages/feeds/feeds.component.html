@@ -1,8 +1,8 @@
 <div class="container">
     <div class="feeds_container">
         <div class="image_preview">
-            <div class="image" >
-                <img [src]="previewImage != null ? previewImage : 'assets/icons/add-image.png'"  alt="Add_Image">
+            <div class="image">
+                <img [src]="previewImage != null ? previewImage : 'assets/icons/add-image.png'" alt="Add_Image">
             </div>
             <div class="select_img_btn">
                 <label class="btn fileUpload btn-default">
@@ -12,10 +12,11 @@
         </div>
         <div class="feed_form">
             <div class="input_header">
-                <input type="text" placeholder="Header">
+                <input type="text" [formControl]="header" placeholder="Header">
             </div>
             <div class="input_detail">
-                <textarea id="detail" style="resize:none; font-family: 'UbuntuRegular';" rows="11" cols="60">Details...</textarea>
+                <textarea id="detail" style="resize:none; font-family: 'UbuntuRegular';" rows="11" cols="60"
+                    [formControl]="detail" placeholder="Details..."></textarea>
             </div>
         </div>
     </div>

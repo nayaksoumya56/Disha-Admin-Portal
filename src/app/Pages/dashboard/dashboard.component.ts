@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  selectedTab: number = 2;
+  selectedTab: number = 1;
 
   constructor() { }
 

@@ -41,6 +41,27 @@
         font-family: $primary-font-Bold;
     }
 }
+.group_dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid $primary-color-light;
+    width: 220px;
+    height: 120px;
+    padding: 20px;
+    margin-left: 80px;
+    border-radius: 10px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    .text {
+        font-size: 18pt;
+    }
+    .number {
+        color: #FFE36E;
+        font-size: 24pt;
+        font-family: $primary-font-Bold;
+    }
+}
 .queue {
     display: flex;
     justify-content: center;
